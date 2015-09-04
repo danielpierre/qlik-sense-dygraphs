@@ -1,16 +1,16 @@
 define([], function () {
 
-	"use strict";
+    "use strict";
 
-	return {
-		version: 1.0,
-		qHyperCubeDef : {
-			qDimensions : [],
-			qMeasures : [],
-			qInitialDataFetch : [{
-				qWidth : 10,
-				qHeight : 1000
-			}]
-		}
-	};
+    return {
+        version: 1.0,
+        qHyperCubeDef : {
+            qDimensions : [],
+            qMeasures : [],
+            qInitialDataFetch : [{
+                qWidth : 10,
+                qHeight : 1000
+            }]
+        }
+    };
 });
