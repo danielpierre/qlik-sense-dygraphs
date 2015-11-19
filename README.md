@@ -55,7 +55,7 @@ This visualization extension allows dygraphs charts to be integrated with Qlik S
 
 3. (Optional) Import the demo app to your Qlik Sense environment.
    * Qlik Sense Desktop:
-     Copy the dygraphs for Qlik Sense demo .qvf file from the demo folder within the qs-dygraphs directory to <br>
+     Copy the dygraphs for Qlik Sense demo .qvf file from the demo folder to
      "C:\\Users\\\<UserName>\\Documents\\Qlik\\Sense\\Apps"
 
    * Qlik Sense Server:

@@ -1,5 +1,3 @@
-/* qs-dygraphs properties v2.0 */
-
 define([], function () {
 
     "use strict";

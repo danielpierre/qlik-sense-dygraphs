@@ -1,8 +1,12 @@
 # Change Log
 All notable changes to dygraphs for Qlik Sense will be documented in this file.
-<!-- This project adheres to [Semantic Versioning](http://semver.org/). -->
 
-<!-- ### \[Unreleased\]\[unreleased\] -->
+### \[2.0.1\] - 2015-11-19
+#### Fixed
+- Data handling error for two dimensions with numeric x-values that was causing the chart to display incorrectly (solves Issue #2)
+
+#### Changed
+- Reorganized project directory structure to prevent installation problems with Qlik Sense 2.1.1 (separated extension files from unsupported MIME types)
 
 ### \[2.0\] - 2015-11-08
 #### Added
@@ -12,6 +16,7 @@ All notable changes to dygraphs for Qlik Sense will be documented in this file.
 - Per-series options for applying display properties to data series individually
 - Data plotting functions for line smoothing (smooth-plotter.js), bar charts, multiple-bar charts and candlestick charts (custom-plotters.js)
 - Images of new properties panel layout and additional screenshots of chart configurations
+- Additional content in the demo application to highlight new features
 
 #### Changed
 - Extension data handling moved to global callback functions, which are passed to the pageExtensionData function in senseUtils

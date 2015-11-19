@@ -1,5 +1,3 @@
-/* qs-dygraphs.globals v2.0 */
-
 /*** Helper functions ***/
 
 // Replace null values in the x-axis domain array with data series values ('Dimension2' input)
@@ -432,7 +430,7 @@ function renderD($element, layout, fullMatrix) {
                        }))
                  : [ d[0].qNum ]
                        .concat( [d[1].qText] )
-                       .concat( d.map(function (index) {
+                       .concat( d.slice(2).map(function (index) {
                            return isNaN(index.qNum) ? null : index.qNum;
                        }))
             ;
