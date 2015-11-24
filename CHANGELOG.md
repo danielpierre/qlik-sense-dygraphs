@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to dygraphs for Qlik Sense will be documented in this file.
 
+### \[2.0.2\] - 2015-11-23
+#### Fixed
+- Data handling error for two dimensions and one measure that was returning null y-values for the first x-value
+
+#### Added
+- Thumbnail images for sheets in demo application
+
 ### \[2.0.1\] - 2015-11-19
 #### Fixed
 - Data handling error for two dimensions with numeric x-values that was causing the chart to display incorrectly (solves Issue #2)

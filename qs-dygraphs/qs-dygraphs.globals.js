@@ -3,8 +3,8 @@
 // Replace null values in the x-axis domain array with data series values ('Dimension2' input)
 function fillData(layout, data, domain, series) {
     var x, d, s;
-    for (x = domain.length; --x;) {  // For each row in the x-domain
-        for (d = data.length; --d;) { // iterate over each row in data
+    for (x = domain.length; x--;) {  // For each row in the x-domain
+        for (d = data.length; d--;) { // iterate over each row in data
             s = series.indexOf(data[d][1]) + 1; // look up the data series index for the y-value
             if (data[d][0] === domain[x][0]) { // if x-values match
                 domain[x][s] = data[d][2];     // assign the y-value to the x-domain row at the series index

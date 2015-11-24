@@ -1,5 +1,5 @@
 /* dygraphs for Qlik Sense : Copyright (c) 2015 Daniel Pierre.  Released under the MIT license.
- * Version : 2.0.1
+ * Version : 2.0.2
  * Details : https://github.com/danielpierre/qlik-sense-dygraphs
  */
 
