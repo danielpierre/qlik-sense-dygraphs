@@ -529,7 +529,12 @@ define([], function () {
     var digitsAfterDecimal = {
         type: "string",
         ref: "props.digitsAfterDecimal",
-        label: "Digits After Decimal"
+        label: "Max Digits After Decimal"
+    };
+    var fixedDigitsAfterDecimal = {
+        type: "string",
+        ref: "props.fixedDigitsAfterDecimal",
+        label: "Fixed Digits After Decimal"
     };
     var sigFigs = {
         type: "string",
@@ -749,6 +754,7 @@ define([], function () {
         items: {
             maxNumberWidth: maxNumberWidth,
             digitsAfterDecimal: digitsAfterDecimal,
+            fixedDigitsAfterDecimal: fixedDigitsAfterDecimal,
             sigFigs: sigFigs,
             labelsKMB: labelsKMB,
             labelsKMG2: labelsKMG2,

@@ -1,6 +1,6 @@
-# What's new at v2.0?
+# What's new at version 2?
 
-**dygraphs for Qlik Sense** 2.0 brings a number of new features to offer much more flexibility in handling input data and customizing chart display.
+**dygraphs for Qlik Sense** 2.x brings a number of new features to offer much more flexibility in handling input data and customizing chart display.&nbsp;&nbsp;This document provides a summary of all modifications and additions implemented since version 1.0.
 
 ## Data Handling
 
@@ -30,6 +30,8 @@ Newly added options with brief descriptions are listed below, alphabetically.&nb
 - **Data Series Source** - Choose whether a dimension or multiple measures will provide the data series to be displayed.
 
 - **Error Bars** - Sets of three measures are no longer required for displaying error bars.&nbsp;&nbsp;Low and high values are now set using the _Low Error Value_ and _High Error Value_ properties of a measure, respectively (see _Per-Series Options_).
+
+- **Fixed Digits After Decimal** - Display y-axis labels and values displayed on mouseover with a fixed number of digits after the decimal point.
 
 - **Fixed Zoom** - Keep the zoom level fixed to the initial horizontal extent of the chart and disable zooming.
 
@@ -73,6 +75,8 @@ Newly added options with brief descriptions are listed below, alphabetically.&nb
 
 ## Backwards Compatibility
 
+### Version 1.0
+
 Given the numerous changes, this version _does not_ provide backwards compatibility with version 1.0.&nbsp;&nbsp;To recreate a chart configured with the previous version, the following approach is suggested:
 
 1. Create a new element by dragging and dropping **dygraphs** from the Charts menu onto a sheet where there is an existing dygraphs chart element.
@@ -83,3 +87,13 @@ Given the numerous changes, this version _does not_ provide backwards compatibil
 4. Set the measures for the new element, using the existing element's measures properties as a reference.<br>If error bars are enabled in the existing element, consolidate each set of three measures (which represent low, middle, and high values) into a single measure in the new element.&nbsp;&nbsp;The measure **`Expression`** in the new element will represent the data series (middle value).&nbsp;&nbsp;Enter the expressions that represent the low and high values into the **`Low Error Value`** and **`High Error Value`** properties, respectively.
 5. Set the dimension for the new element.
 6. Remove the old element and save.
+
+### Version 2.0.x
+
+Addition of the **`Fixed Digits After Decimal`** option in version 2.1 may cause values on the y-axis and in the in the legend to display incorrectly in charts configured with the version 2.0.x releases, if non-default settings for **Value Display** options are applied (e.g. **`Show K/M/B for thousands/millions/billions (base 10) on y-axis`** is set to 'On' but the displayed values are not be abbreviated).&nbsp;&nbsp;Take the following steps to ensure that the **Value Display** settings are displayed correctly:
+
+1. Edit the sheet that contains a dygraphs chart element whose **Value Display** properties are not displaying correctly.
+
+2. Temporarily set a value for **`Fixed Digits After Decimal`** in the **Value Display** properties for the element.
+
+3. Remove the value from **`Fixed Digits After Decimal`** and save.&nbsp;&nbsp;**Value Display** settings should now be displayed properly in the chart.

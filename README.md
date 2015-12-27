@@ -241,7 +241,9 @@ If the x-axis data consists of dates, use a date string format (e.g. "2015/08/26
 * **`Digits Before Decimal`** - Number of digits to display before the decimal point.&nbsp;&nbsp;Numbers with more digits to the left of the decimal than this value will be displayed in scientific notation.
 (_integer; default: 6_)
 
-* **`Digits After Decimal`** - Number of digits to display after the decimal point (trailing zeros are not displayed).&nbsp;&nbsp;If a number has absolute value less than 0.1 to the power of this value, it will be displayed in scientific notation. (_integer; default: null_)
+* **`Max Digits After Decimal`** - Maximum number of digits to display after the decimal point (trailing zeros are not displayed).&nbsp;&nbsp;If a number has absolute value less than 0.1 to the power of this value, it will be displayed in scientific notation. (_integer; default: null_)
+
+* **`Fixed Digits After Decimal`** - Number of digits to display after the decimal point for y-axis labels and values displayed on mouseover. (_integer; default: null_)
 
 * **`Significant Digits (Scientific Mode)`** - Fixed number of significant figures to display, in scientific notation.&nbsp;&nbsp;By default, numbers are displayed with a fixed number of digits after the decimal point. (_integer; default: null_)
 

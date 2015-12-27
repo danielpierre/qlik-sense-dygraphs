@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to dygraphs for Qlik Sense will be documented in this file.
 
+### \[2.1\] - 2015-12-27
+#### Added
+- Fixed Digits After Decimal option for display of y-axis labels and values displayed on mouseover
+
+#### Changed
+- Digits After Decimal option relabelled 'Max Digits After Decimal' in properties panel
+- Implemented Fixed Digits After Decimal option in Step Plot and Candlestick Chart demo application sheets to properly display currency values
+
+***
+
 ### \[2.0.2\] - 2015-11-23
 #### Fixed
 - Data handling error for two dimensions and one measure that was returning null y-values for the first x-value

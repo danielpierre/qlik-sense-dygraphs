@@ -135,9 +135,14 @@ function addOptions(layout, data, options, measures) {
         options.dateWindow = layout.props.xAxisDataType === 'date' ? parseDateRange(layout.props.dateWindow)
                                                                    : parseRange(layout.props.dateWindow);
     }
-    // Add number of digits after decimal to options if set in property panel
+    // Add max number of digits after decimal to options if set in property panel
     if (layout.props.digitsAfterDecimal !== '') {
         options.digitsAfterDecimal = +layout.props.digitsAfterDecimal;
+    }
+    // Add fixed number of digits after decimal to options if set in property panel
+    if (layout.props.fixedDigitsAfterDecimal != '') {
+        options.axes.y.axisLabelFormatter = fixedDigitsAfterDecimal;
+        options.axes.y.valueFormatter = fixedDigitsAfterDecimal;
     }
     // Disable zoom if set in the property panel and initiate pan with click-drag instead
     // (default interaction model for rangeSelector)
@@ -304,6 +309,11 @@ function addOptions(layout, data, options, measures) {
                 return { 'v': d, 'label': weekdayName( d.getDay() ) };
             });
         }
+    }
+    // Fix the number of digits after the decimal to a specified number for non-zero values
+    function fixedDigitsAfterDecimal(y) {
+        var digits = layout.props.fixedDigitsAfterDecimal;
+        return y === 0 ? y : y.toFixed(digits);
     }
 }
 
