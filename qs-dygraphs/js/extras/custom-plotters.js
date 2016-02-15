@@ -158,3 +158,85 @@ function multiColumnBarPlotter(e) {
         }
     }
 }
+
+function boxPlotter(e) {
+    // This is the officially endorsed way to plot all the series at once.
+    if (e.seriesIndex !== 0) return;
+
+    var BOX_WIDTH = 12,
+        END_WIDTH = 9,
+        setCount = e.seriesCount,
+        sets = e.allSeriesPoints,
+        area = e.plotArea,
+        ctx = e.drawingContext,
+        boxes = [],
+        i, length, box, topY, bottomY, centerX, bandY, bodyY, bodyHeight
+    ;
+
+    length = sets[0].length;
+    for (i = 0; i < length; i++) {
+        box = {
+            min     : sets[0][i].yval,
+            q1      : sets[1][i].yval,
+            median  : sets[2][i].yval,
+            q3      : sets[3][i].yval,
+            max     : sets[4][i].yval,
+            iqr     : sets[5][i].yval,
+            minY    : sets[0][i].y,
+            q1Y     : sets[1][i].y,
+            medianY : sets[2][i].y,
+            q3Y     : sets[3][i].y,
+            maxY    : sets[4][i].y,
+            iqrY    : sets[5][i].y
+        };
+        boxes.push(box);
+    }
+
+    ctx.strokeStyle = '#202020'; // line stroke color (black)
+    // ctx.strokeStyle = '#5378C1'; // blue
+    // ctx.lineWidth = 0.6;
+    length = boxes.length;
+
+    for (i = 0; i < length; i++) {
+
+        box = boxes[i];
+        topY = area.h * box.maxY + area.y;
+        bottomY = area.h * box.minY + area.y;
+        centerX = area.x + sets[0][i].x * area.w;
+        bandY = area.h * box.medianY + area.y;
+
+        // Draw a line from the min to max value
+        ctx.setLineDash([3, 3]);
+        ctx.beginPath();
+        ctx.moveTo(centerX, topY);
+        ctx.lineTo(centerX, bottomY);
+        ctx.stroke();
+
+        // Draw min value whisker end
+        ctx.setLineDash([]);
+        ctx.beginPath();
+        ctx.moveTo(centerX - END_WIDTH / 2, bottomY);
+        ctx.lineTo(centerX + END_WIDTH / 2, bottomY);
+        ctx.stroke();
+
+        // Draw max value whisker end
+        ctx.beginPath();
+        ctx.moveTo(centerX - END_WIDTH / 2, topY);
+        ctx.lineTo(centerX + END_WIDTH / 2, topY);
+        ctx.stroke();
+
+        // Draw the box outline and fill
+        bodyHeight = area.h * Math.abs(box.q3Y - box.q1Y);
+        // ctx.fillStyle ='rgba(255,255,255,1.0)'; // white
+        ctx.fillStyle = '#d9d9d9'; // grey
+        bodyY = area.h * box.q3Y + area.y;
+        ctx.fillRect(centerX - BOX_WIDTH / 2, bodyY, BOX_WIDTH, bodyHeight);
+        ctx.strokeRect(centerX - BOX_WIDTH / 2, bodyY, BOX_WIDTH, bodyHeight);
+
+        // Draw a band for the median value
+        ctx.beginPath();
+        ctx.moveTo(centerX - BOX_WIDTH / 2, bandY);
+        ctx.lineTo(centerX + BOX_WIDTH / 2, bandY);
+        ctx.stroke();
+    }
+}

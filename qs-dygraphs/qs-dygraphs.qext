@@ -3,7 +3,7 @@
     "description": "dygraphs for Qlik Sense",
     "icon": "line-chart",
     "type": "visualization",
-    "version": "2.0.2",
+    "version": "2.1",
     "preview": "dygraphs-thumb.png",
     "author": "Daniel Pierre"
 }

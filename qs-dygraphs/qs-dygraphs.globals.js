@@ -1,5 +1,39 @@
 /*** Helper functions ***/
 
+// Calculate statistics for a boxplot chart from a set of values
+function boxplotStats(vals) {
+    var half, values, min, max, median, h1, h2, q1, q3, iqr;
+
+    values = vals.concat()
+                 .sort(function (a, b) { return a - b; })
+                 .filter(function (d) { return d !== null && typeof d !== 'undefined'; });
+
+    min = Math.min.apply(Math, values);
+    max = Math.max.apply(Math, values);
+
+    half = Math.floor(values.length/2);
+    h1 = values.slice(0,half);
+
+    // median and h2
+    if (values.length % 2) {  // remainder
+        median = values[half]; // value at 'half' index
+        h2 = values.slice(half+1);
+    }
+    else {
+        median = (values[half-1] + values[half]) / 2.0;
+        h2 = values.slice(half);
+    }
+
+    // quartiles
+    half = Math.floor(h1.length/2);
+    q1 = h1.length % 2 ? h1[half] : (h1[half-1] + h1[half]) / 2.0;
+    half = Math.floor(h2.length/2);
+    q3 = h2.length % 2 ? h2[half] : (h2[half-1] + h2[half]) / 2.0;
+    iqr = q3 - q1
+
+    return [ min, q1, median, q3, max, iqr ];
+}
+
 // Replace null values in the x-axis domain array with data series values ('Dimension2' input)
 function fillData(layout, data, domain, series) {
     var x, d, s;
@@ -172,6 +206,10 @@ function addOptions(layout, data, options, measures) {
     // Plot as a candlestick chart if set in the property panel
     if (layout.props.plotter === 'candle' && measures.length === 4) {
         options.plotter = candlePlotter;
+    }
+    // Plot as a boxplot chart if set in the property panel
+    if (layout.props.plotter === 'boxplot') {
+        options.plotter = boxPlotter;
     }
     // Add number of digits before decimal to options if set in property panel
     if (layout.props.sigFigs !== '') {
@@ -475,6 +513,16 @@ function renderD($element, layout, fullMatrix) {
             return ( a[index] === b[index] ? 0 : (a[index] < b[index] ? -1 : 1) );
         };
     })(0));
+
+    // If boxplot chart is selected in the property panel,
+    // calculate boxplot statistics for the set of y-values
+    // at each x-value and use corresponding labels
+    if (layout.props.plotter === 'boxplot') {
+        data = data.map(function (d) {
+            return d.slice(0,1).concat( boxplotStats(d.slice(1)) )
+        });
+        layout.props.labels = [ dimensions[0] ].concat( ['Min', 'Q1', 'Median', 'Q3', 'Max', 'IQR'] );
+    }
 
     legendHighlightOpts(layout); // Set legend highlighting style
     legendFontSize(layout); // Set legend font size

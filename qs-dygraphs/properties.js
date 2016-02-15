@@ -229,6 +229,9 @@ define([], function () {
         }, {
             label: "Candlestick Chart (Open|Close|High|Low)",
             value: "candle"
+        }, {
+            label: "Boxplot Chart",
+            value: "boxplot"
         }],
         defaultValue: "line"
     };
