@@ -3,9 +3,10 @@ All notable changes to dygraphs for Qlik Sense will be documented in this file.
 
 ### \[2.2\] - 2016-02-15
 #### Added
-- Boxplot Chart presentation option for data line display.
+- Boxplot Chart presentation option for data line display
 - Data plotting function for box-and-whisker charts (custom-plotters.js)
 - Calculation of 5-number summary and remapping of hypercube data (qs-dygraphs.globals.js)
+- Updated documentation and screenshots of properties panel
 
 ### \[2.1\] - 2015-12-27
 #### Added
