@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to dygraphs for Qlik Sense will be documented in this file.
 
+### \[2.2\] - 2016-02-15
+#### Added
+- Boxplot Chart presentation option for data line display.
+- Data plotting function for box-and-whisker charts (custom-plotters.js)
+- Calculation of 5-number summary and remapping of hypercube data (qs-dygraphs.globals.js)
+
 ### \[2.1\] - 2015-12-27
 #### Added
 - Fixed Digits After Decimal option for display of y-axis labels and values displayed on mouseover
@@ -8,8 +14,6 @@ All notable changes to dygraphs for Qlik Sense will be documented in this file.
 #### Changed
 - Digits After Decimal option relabelled 'Max Digits After Decimal' in properties panel
 - Implemented Fixed Digits After Decimal option in Step Plot and Candlestick Chart demo application sheets to properly display currency values
-
-***
 
 ### \[2.0.2\] - 2015-11-23
 #### Fixed

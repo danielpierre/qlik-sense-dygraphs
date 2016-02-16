@@ -129,7 +129,8 @@ When this is set to **Measures**, one dimension (x-axis values) and at least one
   - **Line Chart** - Data points for each series are plotted as a line.
   - **Bar Chart** - Data points for each series are plotted as vertical bars.
   - **Multiple-Column Bar Chart** - At each x-value, data points for each series are plotted as adjacent vertical bars.
-  - **Candlestick Chart** - Displays trends in price movements.&nbsp;&nbsp;Four measures are required, consisting of open, close, high and low values, respectively.
+  - **Candlestick Chart** - Displays trends in price movements.&nbsp;&nbsp;Four measures are required, consisting of open, close, high and low values, respectively.&nbsp;&nbsp;**`Data Series Source`** must be set to **Measures**.
+  - **Boxplot Chart** - Displays a box-and-whisker-plot to represent the five-number summary (minimum, maximum, median, lower quartile and upper quartile) of y-values at each x-value.&nbsp;&nbsp;Two dimensions and one measure are required.&nbsp;&nbsp;**`Data Series Source`** must be set to **Dimension 2**.
 
 * **`Data Points`** - Draw a small dot at each data point in addition to the line that passes through.&nbsp;&nbsp;This option may also be set on a [per-series](#per-series-options) basis.
 (_default: Off_)
