@@ -8,6 +8,21 @@ define([], function () {
         min: 1,
         max: 2
     };
+    // Axis
+    var axis = {
+        type: "string",
+        component:"dropdown",
+        ref: "qDef.props.axis",
+        label: "Axis",
+        options: [{
+            label: "Primary (left)",
+            value: "y1"
+        }, {
+            label: "Secondary (right)",
+            value: "y2"
+        }],
+        defaultValue: "y1"
+    };
     // Error Bar Values
     var lowErrorVal = {
         type: "string",
@@ -149,6 +164,8 @@ define([], function () {
         uses: "measures",
         min: 1,
         items: {
+            // Axis
+            axis: axis,
             // Data Series Error Bar Values
             lowErrorVal: lowErrorVal,
             highErrorVal: highErrorVal,
@@ -503,6 +520,36 @@ define([], function () {
         }],
         defaultValue: true
     };
+/*!*/
+    var drawY2Grid = {
+        type: "boolean",
+        component: "switch",
+        ref: "props.drawY2Grid",
+        label: "y2-Axis Gridlines",
+        options: [{
+            value: true,
+            label: "On"
+        }, {
+            value: false,
+            label: "Off"
+        }],
+        defaultValue: false
+    };
+    var independentTicks = {
+        type: "boolean",
+        component: "switch",
+        ref: "props.independentTicks",
+        label: "Independent y-Axes Ticks",
+        options: [{
+            value: true,
+            label: "On"
+        }, {
+            value: false,
+            label: "Off"
+        }],
+        defaultValue: false
+    };
+/*!*/
     var xRangePad = {
         type: "string",
         ref: "props.xRangePad",
@@ -744,6 +791,10 @@ define([], function () {
         items: {
             drawXGrid: drawXGrid,
             drawYGrid: drawYGrid,
+/*!*/
+            drawY2Grid: drawY2Grid,
+            independentTicks: independentTicks,
+/*!*/
             xRangePad: xRangePad,
             yRangePad: yRangePad,
             dateWindow: dateWindow,

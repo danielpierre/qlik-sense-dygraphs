@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to dygraphs for Qlik Sense will be documented in this file.
 
+### \[2.2\] - 2016-02-16
+#### Added
+- Secondary y-axis option for assignment of data series
+- Display options for secondary y-axis gridlines and ticks
+- Updated documentation and screenshots of properties panel
+
 ### \[2.2\] - 2016-02-15
 #### Added
 - Boxplot Chart presentation option for data line display

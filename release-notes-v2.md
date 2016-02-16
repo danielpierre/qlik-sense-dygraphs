@@ -39,6 +39,8 @@ Newly added options with brief descriptions are listed below, alphabetically.&nb
 
 - **Highlighted Point Size** - Set the size of dots drawn over highlighted data points.
 
+- **Independent y-Axes Ticks** - Choose whether ticks for y-axes should be aligned or independent when the secondary y-axis is enabled.
+
 - **Legend Display Style** - A dropdown menu replaces the _Always Show Legend_ checkbox.&nbsp;&nbsp;Three options are now available: _Mouseover_, _Always_ and _Follow_ (new)
 
 - **Line Smoothing** - Draw a smooth line between points using Be&#769;zier curves.
@@ -47,7 +49,7 @@ Newly added options with brief descriptions are listed below, alphabetically.&nb
 
 - **Pan Edge Limit** - Limit panning past the range of values on the x-axis when interacting with the chart.
 
-- **Per-Series Options** - Configure display properties for each data series individually (see _Data Series Source_).
+- **Per-Series Options** - Configure display properties for each data series individually.&nbsp;&nbsp;A data series may also be assigned to either the primary or secondary y-axis (see _Data Series Source_).
 
 - **Point Size** - Set the size of dots drawn over data points.
 
@@ -70,6 +72,8 @@ Newly added options with brief descriptions are listed below, alphabetically.&nb
 - **x-Axis Range** - Set the horizontal range of the chart.
 
 - **y-Axis Range** - Set the vertical range of the chart.
+
+- **y2-Axis Gridlines** - Choose whether or not to display horizontal gridlines under the chart for the secondary y-axis when it is enabled.
 
 - **Zoom Animation** - Animate zoom transitions when interacting with the chart.
 

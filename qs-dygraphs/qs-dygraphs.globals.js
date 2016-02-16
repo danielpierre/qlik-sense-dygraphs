@@ -173,6 +173,12 @@ function addOptions(layout, data, options, measures) {
     if (layout.props.digitsAfterDecimal !== '') {
         options.digitsAfterDecimal = +layout.props.digitsAfterDecimal;
     }
+    // Draw gridlines for the secondary y-axis
+    if (layout.props.drawY2Grid === true) {
+        options.axes.y2 = options.axes.y2 || {};
+        options.axes.y2.drawGrid = true;
+        options.axes.y2.gridLinePattern = [2,2];
+    }
     // Add fixed number of digits after decimal to options if set in property panel
     if (layout.props.fixedDigitsAfterDecimal != '') {
         options.axes.y.axisLabelFormatter = fixedDigitsAfterDecimal;
@@ -190,6 +196,11 @@ function addOptions(layout, data, options, measures) {
             // strokeBorderWidth: 1,
             highlightCircleSize: 4
         }
+    }
+    // Plot ticks for y-axes independently rather than aligning them
+    if (layout.props.independentTicks === true) {
+        options.axes.y2 = options.axes.y2 || {};
+        options.axes.y2.independentTicks = true;
     }
     // Add number of digits before decimal to options if set in property panel
     if (layout.props.maxNumberWidth !== '') {
@@ -613,6 +624,7 @@ function renderM($element, layout, fullMatrix) {
     layout.props.dataSeries = layout.qHyperCube.qMeasureInfo.reduce(function (o, d) {
 
         o[d.qFallbackTitle] = {
+            'axis'                : d.props.axis,
             'color'               : d.props.color,
             'drawPoints'          : d.props.drawPoints,
             'fillGraph'           : d.props.fillGraph,

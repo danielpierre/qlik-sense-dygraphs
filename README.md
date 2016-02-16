@@ -223,6 +223,12 @@ All Data Line Properties options may also be set on a [per-series](#per-series-o
 * **`y-Axis Gridlines`** - Display horizontal gridlines under the chart.
 (_default: On_)
 
+* **`y2-Axis Gridlines`** - Display horizontal gridlines under the chart for the secondary y-axis, when it is enabled.
+(_default: Off_)
+
+* **`Independent y-Axes Ticks`** - Set tick positions for y-axes independently when the secondary y-axis is enabled.&nbsp;&nbsp;By default, ticks on the secondary y-axis are aligned to those of the primary y-axis.
+(_default: Off_)
+
 * **`x-Axis Padding`** - Amount of extra space around the x-axis value range to ensure points at the edges remain visible, in pixels.
 (_float; default: 0_)
 
@@ -289,6 +295,9 @@ Per-Series Options allow you to configure display properties of each plotted dat
 _Per-Series Options (in Measures section)_
 
 [![per-series options](img/props_per-series_small.png)](img/props_per-series.png)
+
+* **`Axis`** - Assign the data series to either the primary y-axis (left) or the secondary y-axis (right).&nbsp;&nbsp;If a data series is assigned to the secondary y-axis, gridlines and ticks for the secondary y-axis may be configured with **`y2-Axis Gridlines`** and **`Independent y-Axes Ticks`**, respectively (see [Axes and Chart Area](#axes-and-chart-area)).<br>
+(_default: Primary_)
 
 * **`Low Error Value`** - Used in conjunction with the **`Error Bars`** setting (see [Data Line Display](#data-line-display)).&nbsp;&nbsp;If set, an error bar will be drawn below each point in the data series between this value and the line plot for the data series.&nbsp;&nbsp;A field or an expression may be used.<br>
 When **`Data Series Source`** is set to Dimension 2 (see [Input Data](#input-data)), an error bar will be displayed below _each_ data series provided by the second dimension.<br>
