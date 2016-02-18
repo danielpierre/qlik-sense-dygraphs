@@ -8,7 +8,7 @@ define([], function () {
         min: 1,
         max: 2
     };
-    // Axis
+    // Axis Assignment
     var axis = {
         type: "string",
         component:"dropdown",
@@ -424,6 +424,12 @@ define([], function () {
         label: "y-Axis Title",
         expression: "optional"
     };
+    var y2AxisTitle = {
+        type: "string",
+        ref: "props.y2label",
+        label: "Secondary y-Axis Title",
+        expression: "optional"
+    };
     var axisTitleFontSize = {
         type: "string",
         ref: "props.axisTitleFontSize",
@@ -520,12 +526,11 @@ define([], function () {
         }],
         defaultValue: true
     };
-/*!*/
     var drawY2Grid = {
         type: "boolean",
         component: "switch",
         ref: "props.drawY2Grid",
-        label: "y2-Axis Gridlines",
+        label: "Secondary y-Axis Gridlines",
         options: [{
             value: true,
             label: "On"
@@ -549,7 +554,6 @@ define([], function () {
         }],
         defaultValue: false
     };
-/*!*/
     var xRangePad = {
         type: "string",
         ref: "props.xRangePad",
@@ -769,6 +773,7 @@ define([], function () {
             graphTitleFontSize: graphTitleFontSize,
             xAxisTitle: xAxisTitle,
             yAxisTitle: yAxisTitle,
+            y2AxisTitle: y2AxisTitle,
             axisTitleFontSize: axisTitleFontSize,
             axisLabelFontSize: axisLabelFontSize
         }
@@ -791,10 +796,8 @@ define([], function () {
         items: {
             drawXGrid: drawXGrid,
             drawYGrid: drawYGrid,
-/*!*/
             drawY2Grid: drawY2Grid,
             independentTicks: independentTicks,
-/*!*/
             xRangePad: xRangePad,
             yRangePad: yRangePad,
             dateWindow: dateWindow,

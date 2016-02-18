@@ -188,10 +188,12 @@ All Data Line Properties options may also be set on a [per-series](#per-series-o
 * **`Graph Title Font Size`** - Size of the font to use for the graph title, in pixels.<br>
 (_integer; default: 20_)
 
-* **`x-axis Title`** - Text to display below the chart's x-axis.&nbsp;&nbsp;HTML character entities may be used in addition to plain text.
+* **`x-Axis Title`** - Text to display below the chart's x-axis.&nbsp;&nbsp;HTML character entities may be used in addition to plain text.
 (_text; default: null_)
 
-* **`y-axis Title`** - Text to display to the left of the chart's y-axis.&nbsp;&nbsp;HTML character entities may be used in addition to plain text. (_text; default: null_)
+* **`y-Axis Title`** - Text to display to the left of the chart's primary/default y-axis.&nbsp;&nbsp;HTML character entities may be used in addition to plain text. (_text; default: null_)
+
+* **`Secondary y-Axis Title`** - Text to display to the right of the chart's secondary y-axis, when it is enabled.&nbsp;&nbsp;HTML character entities may be used in addition to plain text. (_text; default: null_)
 
 * **`Axis Title Font Size`** - Size of the font to use for both the x-axis and y-axis titles, in pixels.
 (_integer; default: 16_)
@@ -220,10 +222,10 @@ All Data Line Properties options may also be set on a [per-series](#per-series-o
 * **`x-Axis Gridlines`** - Display vertical gridlines under the chart.
 (_default: On_)
 
-* **`y-Axis Gridlines`** - Display horizontal gridlines under the chart.
+* **`y-Axis Gridlines`** - Display horizontal gridlines under the chart for the primary/default y-axis.
 (_default: On_)
 
-* **`y2-Axis Gridlines`** - Display horizontal gridlines under the chart for the secondary y-axis, when it is enabled.
+* **`Secondary y-Axis Gridlines`** - Display horizontal gridlines under the chart for the secondary y-axis, when it is enabled.
 (_default: Off_)
 
 * **`Independent y-Axes Ticks`** - Set tick positions for y-axes independently when the secondary y-axis is enabled.&nbsp;&nbsp;By default, ticks on the secondary y-axis are aligned to those of the primary y-axis.

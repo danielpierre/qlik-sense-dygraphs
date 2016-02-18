@@ -409,6 +409,7 @@ function qsDygraph(id, layout, data, measures) {
         title                  : layout.props.title,
         xlabel                 : layout.props.xlabel,
         ylabel                 : layout.props.ylabel,
+        y2label                : layout.props.y2label,
         axes : {
             x : { drawGrid : layout.props.drawXGrid },
             y : { drawGrid : layout.props.drawYGrid }
